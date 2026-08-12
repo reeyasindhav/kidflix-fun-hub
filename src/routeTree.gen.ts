@@ -10,33 +10,193 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as CollectionsRouteImport } from './routes/collections'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as MyListRouteImport } from './routes/my-list'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as ParentIndexRouteImport } from './routes/parent/index'
+import { Route as ParentControlsRouteImport } from './routes/parent/controls'
+import { Route as ParentWatchTimeRouteImport } from './routes/parent/watch-time'
+import { Route as ShowIdRouteImport } from './routes/show.$id'
+import { Route as WatchIdRouteImport } from './routes/watch.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollectionsRoute = CollectionsRouteImport.update({
+  id: '/collections',
+  path: '/collections',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MyListRoute = MyListRouteImport.update({
+  id: '/my-list',
+  path: '/my-list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentIndexRoute = ParentIndexRouteImport.update({
+  id: '/parent/',
+  path: '/parent/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentControlsRoute = ParentControlsRouteImport.update({
+  id: '/parent/controls',
+  path: '/parent/controls',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentWatchTimeRoute = ParentWatchTimeRouteImport.update({
+  id: '/parent/watch-time',
+  path: '/parent/watch-time',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShowIdRoute = ShowIdRouteImport.update({
+  id: '/show/$id',
+  path: '/show/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WatchIdRoute = WatchIdRouteImport.update({
+  id: '/watch/$id',
+  path: '/watch/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/collections': typeof CollectionsRoute
+  '/login': typeof LoginRoute
+  '/my-list': typeof MyListRoute
+  '/notifications': typeof NotificationsRoute
+  '/profile': typeof ProfileRoute
+  '/signup': typeof SignupRoute
+  '/parent/controls': typeof ParentControlsRoute
+  '/parent/watch-time': typeof ParentWatchTimeRoute
+  '/show/$id': typeof ShowIdRoute
+  '/watch/$id': typeof WatchIdRoute
+  '/parent/': typeof ParentIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/collections': typeof CollectionsRoute
+  '/login': typeof LoginRoute
+  '/my-list': typeof MyListRoute
+  '/notifications': typeof NotificationsRoute
+  '/profile': typeof ProfileRoute
+  '/signup': typeof SignupRoute
+  '/parent/controls': typeof ParentControlsRoute
+  '/parent/watch-time': typeof ParentWatchTimeRoute
+  '/show/$id': typeof ShowIdRoute
+  '/watch/$id': typeof WatchIdRoute
+  '/parent': typeof ParentIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/collections': typeof CollectionsRoute
+  '/login': typeof LoginRoute
+  '/my-list': typeof MyListRoute
+  '/notifications': typeof NotificationsRoute
+  '/profile': typeof ProfileRoute
+  '/signup': typeof SignupRoute
+  '/parent/controls': typeof ParentControlsRoute
+  '/parent/watch-time': typeof ParentWatchTimeRoute
+  '/show/$id': typeof ShowIdRoute
+  '/watch/$id': typeof WatchIdRoute
+  '/parent/': typeof ParentIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/collections'
+    | '/login'
+    | '/my-list'
+    | '/notifications'
+    | '/profile'
+    | '/signup'
+    | '/parent/controls'
+    | '/parent/watch-time'
+    | '/show/$id'
+    | '/watch/$id'
+    | '/parent/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/collections'
+    | '/login'
+    | '/my-list'
+    | '/notifications'
+    | '/profile'
+    | '/signup'
+    | '/parent/controls'
+    | '/parent/watch-time'
+    | '/show/$id'
+    | '/watch/$id'
+    | '/parent'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/collections'
+    | '/login'
+    | '/my-list'
+    | '/notifications'
+    | '/profile'
+    | '/signup'
+    | '/parent/controls'
+    | '/parent/watch-time'
+    | '/show/$id'
+    | '/watch/$id'
+    | '/parent/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CollectionsRoute: typeof CollectionsRoute
+  LoginRoute: typeof LoginRoute
+  MyListRoute: typeof MyListRoute
+  NotificationsRoute: typeof NotificationsRoute
+  ProfileRoute: typeof ProfileRoute
+  SignupRoute: typeof SignupRoute
+  ParentControlsRoute: typeof ParentControlsRoute
+  ParentWatchTimeRoute: typeof ParentWatchTimeRoute
+  ShowIdRoute: typeof ShowIdRoute
+  WatchIdRoute: typeof WatchIdRoute
+  ParentIndexRoute: typeof ParentIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +208,107 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collections': {
+      id: '/collections'
+      path: '/collections'
+      fullPath: '/collections'
+      preLoaderRoute: typeof CollectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/my-list': {
+      id: '/my-list'
+      path: '/my-list'
+      fullPath: '/my-list'
+      preLoaderRoute: typeof MyListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/': {
+      id: '/parent/'
+      path: '/parent'
+      fullPath: '/parent/'
+      preLoaderRoute: typeof ParentIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/controls': {
+      id: '/parent/controls'
+      path: '/parent/controls'
+      fullPath: '/parent/controls'
+      preLoaderRoute: typeof ParentControlsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/watch-time': {
+      id: '/parent/watch-time'
+      path: '/parent/watch-time'
+      fullPath: '/parent/watch-time'
+      preLoaderRoute: typeof ParentWatchTimeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/show/$id': {
+      id: '/show/$id'
+      path: '/show/$id'
+      fullPath: '/show/$id'
+      preLoaderRoute: typeof ShowIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/watch/$id': {
+      id: '/watch/$id'
+      path: '/watch/$id'
+      fullPath: '/watch/$id'
+      preLoaderRoute: typeof WatchIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CollectionsRoute: CollectionsRoute,
+  LoginRoute: LoginRoute,
+  MyListRoute: MyListRoute,
+  NotificationsRoute: NotificationsRoute,
+  ProfileRoute: ProfileRoute,
+  SignupRoute: SignupRoute,
+  ParentControlsRoute: ParentControlsRoute,
+  ParentWatchTimeRoute: ParentWatchTimeRoute,
+  ShowIdRoute: ShowIdRoute,
+  WatchIdRoute: WatchIdRoute,
+  ParentIndexRoute: ParentIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
