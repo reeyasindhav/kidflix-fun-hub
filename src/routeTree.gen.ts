@@ -16,6 +16,7 @@ import { Route as MyListRouteImport } from './routes/my-list'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as ParentIndexRouteImport } from './routes/parent/index'
+import { Route as ParentControlsRouteImport } from './routes/parent/controls'
 import { Route as ParentWatchTimeRouteImport } from './routes/parent/watch-time'
 import { Route as ShowIdRouteImport } from './routes/show.$id'
 import { Route as WatchIdRouteImport } from './routes/watch.$id'
@@ -55,6 +56,11 @@ const ParentIndexRoute = ParentIndexRouteImport.update({
   path: '/parent/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ParentControlsRoute = ParentControlsRouteImport.update({
+  id: '/parent/controls',
+  path: '/parent/controls',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ParentWatchTimeRoute = ParentWatchTimeRouteImport.update({
   id: '/parent/watch-time',
   path: '/parent/watch-time',
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/my-list': typeof MyListRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
+  '/parent/controls': typeof ParentControlsRoute
   '/parent/watch-time': typeof ParentWatchTimeRoute
   '/show/$id': typeof ShowIdRoute
   '/watch/$id': typeof WatchIdRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/my-list': typeof MyListRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
+  '/parent/controls': typeof ParentControlsRoute
   '/parent/watch-time': typeof ParentWatchTimeRoute
   '/show/$id': typeof ShowIdRoute
   '/watch/$id': typeof WatchIdRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/my-list': typeof MyListRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
+  '/parent/controls': typeof ParentControlsRoute
   '/parent/watch-time': typeof ParentWatchTimeRoute
   '/show/$id': typeof ShowIdRoute
   '/watch/$id': typeof WatchIdRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/my-list'
     | '/profile'
     | '/signup'
+    | '/parent/controls'
     | '/parent/watch-time'
     | '/show/$id'
     | '/watch/$id'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/my-list'
     | '/profile'
     | '/signup'
+    | '/parent/controls'
     | '/parent/watch-time'
     | '/show/$id'
     | '/watch/$id'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/my-list'
     | '/profile'
     | '/signup'
+    | '/parent/controls'
     | '/parent/watch-time'
     | '/show/$id'
     | '/watch/$id'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   MyListRoute: typeof MyListRoute
   ProfileRoute: typeof ProfileRoute
   SignupRoute: typeof SignupRoute
+  ParentControlsRoute: typeof ParentControlsRoute
   ParentWatchTimeRoute: typeof ParentWatchTimeRoute
   ShowIdRoute: typeof ShowIdRoute
   WatchIdRoute: typeof WatchIdRoute
@@ -211,6 +224,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ParentIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/parent/controls': {
+      id: '/parent/controls'
+      path: '/parent/controls'
+      fullPath: '/parent/controls'
+      preLoaderRoute: typeof ParentControlsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/parent/watch-time': {
       id: '/parent/watch-time'
       path: '/parent/watch-time'
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   MyListRoute: MyListRoute,
   ProfileRoute: ProfileRoute,
   SignupRoute: SignupRoute,
+  ParentControlsRoute: ParentControlsRoute,
   ParentWatchTimeRoute: ParentWatchTimeRoute,
   ShowIdRoute: ShowIdRoute,
   WatchIdRoute: WatchIdRoute,
