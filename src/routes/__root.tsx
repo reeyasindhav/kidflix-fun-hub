@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteHeader } from "@/components/kidflix/site-header";
+import { SiteFooter } from "@/components/kidflix/site-footer";
+import { AuthProvider } from "@/lib/auth";
 
 function NotFoundComponent() {
   return (
