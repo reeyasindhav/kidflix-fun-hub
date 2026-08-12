@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CollectionsRouteImport } from './routes/collections'
 import { Route as MyListRouteImport } from './routes/my-list'
 import { Route as ShowIdRouteImport } from './routes/show.$id'
 import { Route as WatchIdRouteImport } from './routes/watch.$id'
@@ -17,6 +18,11 @@ import { Route as WatchIdRouteImport } from './routes/watch.$id'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollectionsRoute = CollectionsRouteImport.update({
+  id: '/collections',
+  path: '/collections',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MyListRoute = MyListRouteImport.update({
@@ -37,12 +43,14 @@ const WatchIdRoute = WatchIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/collections': typeof CollectionsRoute
   '/my-list': typeof MyListRoute
   '/show/$id': typeof ShowIdRoute
   '/watch/$id': typeof WatchIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/collections': typeof CollectionsRoute
   '/my-list': typeof MyListRoute
   '/show/$id': typeof ShowIdRoute
   '/watch/$id': typeof WatchIdRoute
@@ -50,20 +58,23 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/collections': typeof CollectionsRoute
   '/my-list': typeof MyListRoute
   '/show/$id': typeof ShowIdRoute
   '/watch/$id': typeof WatchIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/my-list' | '/show/$id' | '/watch/$id'
+  fullPaths: '/' | '/collections' | '/my-list' | '/show/$id' | '/watch/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/my-list' | '/show/$id' | '/watch/$id'
-  id: '__root__' | '/' | '/my-list' | '/show/$id' | '/watch/$id'
+  to: '/' | '/collections' | '/my-list' | '/show/$id' | '/watch/$id'
+  id:
+    '__root__' | '/' | '/collections' | '/my-list' | '/show/$id' | '/watch/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CollectionsRoute: typeof CollectionsRoute
   MyListRoute: typeof MyListRoute
   ShowIdRoute: typeof ShowIdRoute
   WatchIdRoute: typeof WatchIdRoute
@@ -76,6 +87,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collections': {
+      id: '/collections'
+      path: '/collections'
+      fullPath: '/collections'
+      preLoaderRoute: typeof CollectionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/my-list': {
@@ -104,6 +122,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CollectionsRoute: CollectionsRoute,
   MyListRoute: MyListRoute,
   ShowIdRoute: ShowIdRoute,
   WatchIdRoute: WatchIdRoute,
