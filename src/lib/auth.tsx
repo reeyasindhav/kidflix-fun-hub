@@ -50,7 +50,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       ready,
       signIn: (email, name) =>
         persist({
-          name: name?.trim() || email.split("@")[0].replace(/[._-]/g, " ") || "Parent",
+          name: name?.trim() || (email.split("@")[0] ?? "").replace(/[._-]/g, " ") || "Parent",
           email,
           household: "The Ravensworth family",
           activeKid: "jamie",
