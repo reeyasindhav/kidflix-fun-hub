@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as CollectionsRouteImport } from './routes/collections'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as MyListRouteImport } from './routes/my-list'
+import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as ParentIndexRouteImport } from './routes/parent/index'
@@ -45,6 +46,11 @@ const LoginRoute = LoginRouteImport.update({
 const MyListRoute = MyListRouteImport.update({
   id: '/my-list',
   path: '/my-list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfileRoute = ProfileRouteImport.update({
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/collections': typeof CollectionsRoute
   '/login': typeof LoginRoute
   '/my-list': typeof MyListRoute
+  '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
   '/parent/controls': typeof ParentControlsRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/collections': typeof CollectionsRoute
   '/login': typeof LoginRoute
   '/my-list': typeof MyListRoute
+  '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
   '/parent/controls': typeof ParentControlsRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/collections': typeof CollectionsRoute
   '/login': typeof LoginRoute
   '/my-list': typeof MyListRoute
+  '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
   '/parent/controls': typeof ParentControlsRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/collections'
     | '/login'
     | '/my-list'
+    | '/notifications'
     | '/profile'
     | '/signup'
     | '/parent/controls'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/collections'
     | '/login'
     | '/my-list'
+    | '/notifications'
     | '/profile'
     | '/signup'
     | '/parent/controls'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/collections'
     | '/login'
     | '/my-list'
+    | '/notifications'
     | '/profile'
     | '/signup'
     | '/parent/controls'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   CollectionsRoute: typeof CollectionsRoute
   LoginRoute: typeof LoginRoute
   MyListRoute: typeof MyListRoute
+  NotificationsRoute: typeof NotificationsRoute
   ProfileRoute: typeof ProfileRoute
   SignupRoute: typeof SignupRoute
   ParentControlsRoute: typeof ParentControlsRoute
@@ -221,6 +234,13 @@ declare module '@tanstack/react-router' {
       path: '/my-list'
       fullPath: '/my-list'
       preLoaderRoute: typeof MyListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/profile': {
@@ -281,6 +301,7 @@ const rootRouteChildren: RootRouteChildren = {
   CollectionsRoute: CollectionsRoute,
   LoginRoute: LoginRoute,
   MyListRoute: MyListRoute,
+  NotificationsRoute: NotificationsRoute,
   ProfileRoute: ProfileRoute,
   SignupRoute: SignupRoute,
   ParentControlsRoute: ParentControlsRoute,
