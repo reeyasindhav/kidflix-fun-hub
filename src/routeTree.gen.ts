@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MyListRouteImport } from './routes/my-list'
 import { Route as ShowIdRouteImport } from './routes/show.$id'
 import { Route as WatchIdRouteImport } from './routes/watch.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MyListRoute = MyListRouteImport.update({
+  id: '/my-list',
+  path: '/my-list',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShowIdRoute = ShowIdRouteImport.update({
@@ -31,30 +37,34 @@ const WatchIdRoute = WatchIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/my-list': typeof MyListRoute
   '/show/$id': typeof ShowIdRoute
   '/watch/$id': typeof WatchIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/my-list': typeof MyListRoute
   '/show/$id': typeof ShowIdRoute
   '/watch/$id': typeof WatchIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/my-list': typeof MyListRoute
   '/show/$id': typeof ShowIdRoute
   '/watch/$id': typeof WatchIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/show/$id' | '/watch/$id'
+  fullPaths: '/' | '/my-list' | '/show/$id' | '/watch/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/show/$id' | '/watch/$id'
-  id: '__root__' | '/' | '/show/$id' | '/watch/$id'
+  to: '/' | '/my-list' | '/show/$id' | '/watch/$id'
+  id: '__root__' | '/' | '/my-list' | '/show/$id' | '/watch/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MyListRoute: typeof MyListRoute
   ShowIdRoute: typeof ShowIdRoute
   WatchIdRoute: typeof WatchIdRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/my-list': {
+      id: '/my-list'
+      path: '/my-list'
+      fullPath: '/my-list'
+      preLoaderRoute: typeof MyListRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/show/$id': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MyListRoute: MyListRoute,
   ShowIdRoute: ShowIdRoute,
   WatchIdRoute: WatchIdRoute,
 }
