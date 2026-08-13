@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, KeyRound, Moon, ShieldCheck, Sparkles, Volume2 } from "lucide-react";
+import { ArrowLeft, KeyRound, Moon, ShieldCheck, Star, Volume2 } from "lucide-react";
 import { useState } from "react";
 
 import { AuthGate } from "@/components/kidflix/auth-gate";
@@ -109,7 +109,11 @@ function Controls() {
                 k.id === kidId ? "bg-primary text-primary-foreground shadow-pop" : "bg-secondary",
               )}
             >
-              <img src={img(k.avatarSeed, 100, 100)} alt="" className="size-8 rounded-full object-cover" />
+              <img
+                src={img(k.avatarSeed, 100, 100)}
+                alt=""
+                className="size-8 rounded-full object-cover"
+              />
               {k.name}
             </button>
           ))}
@@ -129,7 +133,9 @@ function Controls() {
                     onClick={() => setBand(b.id as AgeBand)}
                     className={cn(
                       "press rounded-3xl p-5 text-left",
-                      band === b.id ? "bg-primary text-primary-foreground shadow-pop" : "bg-secondary",
+                      band === b.id
+                        ? "bg-primary text-primary-foreground shadow-pop"
+                        : "bg-secondary",
                     )}
                   >
                     <p className="font-display text-xl">{b.label}</p>
@@ -249,11 +255,11 @@ function Controls() {
           </section>
 
           <section className="animate-rise rounded-4xl bg-sunny p-8 text-sunny-foreground shadow-soft">
-            <Sparkles className="size-7" />
+            <Star className="size-7" />
             <h2 className="mt-4 text-2xl">Saved automatically</h2>
             <p className="mt-2 font-semibold opacity-85">
-              {kid.name}: {band} tier · {limit} min/day · {session} min sessions ·{" "}
-              {blocked.length} blocked genre{blocked.length === 1 ? "" : "s"}.
+              {kid.name}: {band} tier · {limit} min/day · {session} min sessions · {blocked.length}{" "}
+              blocked genre{blocked.length === 1 ? "" : "s"}.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <button className="press inline-flex items-center gap-2 rounded-full bg-card px-5 py-3 font-extrabold text-primary shadow-pop">

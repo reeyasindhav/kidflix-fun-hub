@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ArrowRight, Lock, Mail, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Lock, Mail, ShieldCheck, Star } from "lucide-react";
 import { useState } from "react";
 
 import { img } from "@/data/kidflix";
@@ -33,7 +33,7 @@ function Login() {
       <section className="animate-rise relative order-2 overflow-hidden rounded-4xl bg-primary p-10 text-primary-foreground shadow-float lg:order-1">
         <span className="animate-blob absolute -bottom-16 -left-10 size-64 bg-mint/60" />
         <div className="relative">
-          <Sparkles className="size-8" />
+          <Star className="size-8" />
           <h2 className="mt-6 text-4xl leading-tight">
             Kids get the fun.
             <br />

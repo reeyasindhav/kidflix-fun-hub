@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Eye, Heart, ShieldCheck, Sparkles, Timer } from "lucide-react";
+import { ArrowRight, Eye, Heart, ShieldCheck, Star, Timer } from "lucide-react";
 
 import { img } from "@/data/kidflix";
 
@@ -72,7 +72,7 @@ function About() {
         <span className="animate-blob absolute -right-20 -bottom-24 size-80 bg-sunny/70" />
         <div className="relative max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-2 text-sm font-extrabold">
-            <Sparkles className="size-4" /> Our promise
+            <Star className="size-4" /> Our promise
           </span>
           <h1 className="mt-6 text-5xl leading-tight sm:text-6xl">
             Screen time that ends on purpose.

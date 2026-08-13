@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Compass, Filter, Sparkles } from "lucide-react";
+import { Compass, Filter, Star } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import { ShowCard } from "@/components/kidflix/show-card";
@@ -37,7 +37,9 @@ function Collections() {
 
   const filtered = useMemo(
     () =>
-      shows.filter((s) => (band === "all" || s.age === band) && (cat === "all" || s.category === cat)),
+      shows.filter(
+        (s) => (band === "all" || s.age === band) && (cat === "all" || s.category === cat),
+      ),
     [band, cat],
   );
 
@@ -55,9 +57,14 @@ function Collections() {
       <div className="mt-10 space-y-14">
         {collections.map((c) => (
           <section key={c.id}>
-            <div className={cn("flex flex-wrap items-center gap-4 rounded-3xl px-6 py-5", toneBg[c.tone])}>
+            <div
+              className={cn(
+                "flex flex-wrap items-center gap-4 rounded-3xl px-6 py-5",
+                toneBg[c.tone],
+              )}
+            >
               <span className="grid size-12 place-items-center rounded-2xl bg-card">
-                <Sparkles className="size-6 text-primary" />
+                <Star className="size-6 text-primary" />
               </span>
               <div>
                 <h2 className="text-2xl">{c.title}</h2>

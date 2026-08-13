@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles } from "lucide-react";
+import { Star } from "lucide-react";
 
 const columns = [
   {
@@ -37,7 +37,7 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-3">
             <span className="grid size-10 place-items-center rounded-2xl bg-primary text-primary-foreground">
-              <Sparkles className="size-5" />
+              <Star className="size-5" />
             </span>
             <span className="font-display text-2xl text-primary">kidflix</span>
           </div>

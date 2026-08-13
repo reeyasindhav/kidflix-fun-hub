@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BellRing, Clock, ShieldCheck, Sparkles } from "lucide-react";
+import { BellRing, Clock, ShieldCheck, Star } from "lucide-react";
 
 import { getShow, img } from "@/data/kidflix";
 
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/notifications")({
 const items = [
   {
     kind: "New episodes",
-    icon: Sparkles,
+    icon: Star,
     tone: "bg-sunny text-sunny-foreground",
     title: "Tiny Tinkerers added 4 builds",
     body: "All four are inside Jamie's 6–8 tier.",

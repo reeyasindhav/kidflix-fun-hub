@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Clock, Heart, Play, ShieldCheck, Sparkles, Star } from "lucide-react";
+import { ArrowLeft, Clock, Heart, Play, ShieldCheck, Star } from "lucide-react";
 
 import { ShowCard } from "@/components/kidflix/show-card";
 import { getShow, img, shows, toneClass } from "@/data/kidflix";
@@ -71,7 +71,7 @@ function ShowDetail() {
               <Clock className="size-3.5" /> {show.minutes} min episodes
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-2">
-              <Sparkles className="size-3.5" /> {show.episodes} episodes
+              <Play className="size-3.5" /> {show.episodes} episodes
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-sunny px-3 py-2 text-sunny-foreground">
               <Star className="size-3.5 fill-current" /> {show.rating.toFixed(1)}

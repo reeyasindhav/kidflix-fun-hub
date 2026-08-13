@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Bell, Heart, Home, Lock, Menu, Popcorn, Sparkles, X } from "lucide-react";
+import { Bell, Heart, Home, Lock, Menu, Popcorn, Star, X } from "lucide-react";
 import { useState } from "react";
 
 import { useAuth } from "@/lib/auth";
@@ -22,7 +22,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-18 w-full max-w-7xl items-center gap-4 px-4 py-3 sm:px-6">
         <Link to="/" className="press flex items-center gap-3">
           <span className="grid size-11 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-pop">
-            <Sparkles className="size-5" />
+            <Star className="size-5" />
           </span>
           <span className="leading-none">
             <span className="label-caps block text-[0.6rem] text-muted-foreground">
