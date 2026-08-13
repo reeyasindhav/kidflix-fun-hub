@@ -125,7 +125,7 @@ function ParentDashboard() {
                 <div key={k.id} className="flex items-center gap-4">
                   <img
                     src={img(k.avatarSeed, 200, 200)}
-                    alt=""
+                    alt={k.name}
                     className="size-14 shrink-0 rounded-2xl object-cover"
                   />
                   <div className="min-w-0 flex-1">

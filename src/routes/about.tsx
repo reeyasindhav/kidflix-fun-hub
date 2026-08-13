@@ -51,8 +51,16 @@ const pillars = [
 
 const flow = [
   { step: "1", title: "Parent signs up", body: "Create the household, add kids, pick age tiers." },
-  { step: "2", title: "Set gentle limits", body: "Daily minutes, session caps and screen-off time." },
-  { step: "3", title: "Kid picks a profile", body: "They only ever see their own unlocked shelves." },
+  {
+    step: "2",
+    title: "Set gentle limits",
+    body: "Daily minutes, session caps and screen-off time.",
+  },
+  {
+    step: "3",
+    title: "Kid picks a profile",
+    body: "They only ever see their own unlocked shelves.",
+  },
   { step: "4", title: "Watch, then stop", body: "A calm end card, a wind-down story, no next-up." },
   { step: "5", title: "Parent reviews", body: "Weekly report, approvals and one-tap adjustments." },
 ];
@@ -70,8 +78,8 @@ function About() {
             Screen time that ends on purpose.
           </h1>
           <p className="mt-5 text-lg font-semibold opacity-85">
-            Mainstream platforms are built to keep watching. Kidflix is built to stop — kindly, at the
-            right moment, with the numbers to prove it.
+            Mainstream platforms are built to keep watching. Kidflix is built to stop — kindly, at
+            the right moment, with the numbers to prove it.
           </p>
         </div>
       </section>
@@ -94,7 +102,7 @@ function About() {
 
       <section className="mt-14 grid items-center gap-10 lg:grid-cols-[1fr_1fr]">
         <img
-          src={img("kidflix-about-family", 900, 700)}
+          src={img("family kids cartoon", 900, 700)}
           alt="A child reading beside a window full of books"
           className="animate-float aspect-4/3 w-full rounded-4xl border-8 border-accent/60 object-cover shadow-float"
         />
@@ -113,7 +121,9 @@ function About() {
                 </span>
                 <span>
                   <span className="block font-display text-xl">{f.title}</span>
-                  <span className="block text-sm font-semibold text-muted-foreground">{f.body}</span>
+                  <span className="block text-sm font-semibold text-muted-foreground">
+                    {f.body}
+                  </span>
                 </span>
               </li>
             ))}

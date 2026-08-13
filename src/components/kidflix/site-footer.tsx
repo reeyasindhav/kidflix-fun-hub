@@ -22,6 +22,8 @@ const columns = [
     title: "Kidflix",
     links: [
       { to: "/about", label: "How it works" },
+      { to: "/terms", label: "Terms of service" },
+      { to: "/privacy", label: "Privacy policy" },
       { to: "/signup", label: "Create a household" },
       { to: "/login", label: "Sign in" },
     ] as const,

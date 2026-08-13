@@ -15,8 +15,10 @@ import { Route as CollectionsRouteImport } from './routes/collections'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as MyListRouteImport } from './routes/my-list'
 import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ParentIndexRouteImport } from './routes/parent/index'
 import { Route as ParentControlsRouteImport } from './routes/parent/controls'
 import { Route as ParentWatchTimeRouteImport } from './routes/parent/watch-time'
@@ -53,6 +55,11 @@ const NotificationsRoute = NotificationsRouteImport.update({
   path: '/notifications',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
@@ -61,6 +68,11 @@ const ProfileRoute = ProfileRouteImport.update({
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
   path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ParentIndexRoute = ParentIndexRouteImport.update({
@@ -96,8 +108,10 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/my-list': typeof MyListRoute
   '/notifications': typeof NotificationsRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
   '/parent/controls': typeof ParentControlsRoute
   '/parent/watch-time': typeof ParentWatchTimeRoute
   '/show/$id': typeof ShowIdRoute
@@ -111,8 +125,10 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/my-list': typeof MyListRoute
   '/notifications': typeof NotificationsRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
   '/parent/controls': typeof ParentControlsRoute
   '/parent/watch-time': typeof ParentWatchTimeRoute
   '/show/$id': typeof ShowIdRoute
@@ -127,8 +143,10 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/my-list': typeof MyListRoute
   '/notifications': typeof NotificationsRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
+  '/terms': typeof TermsRoute
   '/parent/controls': typeof ParentControlsRoute
   '/parent/watch-time': typeof ParentWatchTimeRoute
   '/show/$id': typeof ShowIdRoute
@@ -144,8 +162,10 @@ export interface FileRouteTypes {
     | '/login'
     | '/my-list'
     | '/notifications'
+    | '/privacy'
     | '/profile'
     | '/signup'
+    | '/terms'
     | '/parent/controls'
     | '/parent/watch-time'
     | '/show/$id'
@@ -159,8 +179,10 @@ export interface FileRouteTypes {
     | '/login'
     | '/my-list'
     | '/notifications'
+    | '/privacy'
     | '/profile'
     | '/signup'
+    | '/terms'
     | '/parent/controls'
     | '/parent/watch-time'
     | '/show/$id'
@@ -174,8 +196,10 @@ export interface FileRouteTypes {
     | '/login'
     | '/my-list'
     | '/notifications'
+    | '/privacy'
     | '/profile'
     | '/signup'
+    | '/terms'
     | '/parent/controls'
     | '/parent/watch-time'
     | '/show/$id'
@@ -190,8 +214,10 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   MyListRoute: typeof MyListRoute
   NotificationsRoute: typeof NotificationsRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProfileRoute: typeof ProfileRoute
   SignupRoute: typeof SignupRoute
+  TermsRoute: typeof TermsRoute
   ParentControlsRoute: typeof ParentControlsRoute
   ParentWatchTimeRoute: typeof ParentWatchTimeRoute
   ShowIdRoute: typeof ShowIdRoute
@@ -243,6 +269,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
@@ -255,6 +288,13 @@ declare module '@tanstack/react-router' {
       path: '/signup'
       fullPath: '/signup'
       preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/parent/': {
@@ -302,8 +342,10 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   MyListRoute: MyListRoute,
   NotificationsRoute: NotificationsRoute,
+  PrivacyRoute: PrivacyRoute,
   ProfileRoute: ProfileRoute,
   SignupRoute: SignupRoute,
+  TermsRoute: TermsRoute,
   ParentControlsRoute: ParentControlsRoute,
   ParentWatchTimeRoute: ParentWatchTimeRoute,
   ShowIdRoute: ShowIdRoute,

@@ -11,7 +11,8 @@ export const Route = createFileRoute("/login")({
       { title: "Sign in — Kidflix" },
       {
         name: "description",
-        content: "Sign in to your Kidflix household to manage kid profiles, controls and watch time.",
+        content:
+          "Sign in to your Kidflix household to manage kid profiles, controls and watch time.",
       },
       { property: "og:title", content: "Sign in — Kidflix" },
       { property: "og:description", content: "Parents sign in here. Kids just pick their avatar." },
@@ -50,7 +51,7 @@ function Login() {
             ))}
           </ul>
           <img
-            src={img("kidflix-login-art", 700, 500)}
+            src={img("kids fun cartoon", 700, 500)}
             alt="Children laughing together"
             className="animate-float mt-10 aspect-4/3 w-full rounded-3xl border-6 border-accent/60 object-cover"
           />

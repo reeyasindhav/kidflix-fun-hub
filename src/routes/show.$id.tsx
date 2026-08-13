@@ -47,7 +47,7 @@ function ShowDetail() {
       <section className="animate-rise mt-5 grid gap-8 rounded-4xl bg-card p-6 shadow-soft lg:grid-cols-[1.05fr_1fr] lg:p-10">
         <div className="relative overflow-hidden rounded-3xl">
           <img
-            src={img(show.seed, 1000, 750)}
+            src={img(show.seed, 800, 600)}
             alt={show.title}
             className="aspect-4/3 w-full object-cover"
           />
@@ -140,7 +140,15 @@ function ShowDetail() {
               />
               <div className="min-w-0">
                 <p className="font-display text-lg">
-                  Ep {i + 1} · {["The wobbly start", "A very loud quiet", "Turbo's big day", "Home by starlight"][i]}
+                  Ep {i + 1} ·{" "}
+                  {
+                    [
+                      "The wobbly start",
+                      "A very loud quiet",
+                      "Turbo's big day",
+                      "Home by starlight",
+                    ][i]
+                  }
                 </p>
                 <p className="truncate text-sm font-semibold text-muted-foreground">
                   {show.minutes} min · ends calmly, no cliffhanger

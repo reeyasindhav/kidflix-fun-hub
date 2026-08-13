@@ -16,9 +16,8 @@ export type Show = {
   parentNote: string;
 };
 
-/** Open-licensed photography served through the Picsum (Unsplash-sourced) CDN. */
 export const img = (seed: string, w = 800, h = 600) =>
-  `https://picsum.photos/seed/${seed}/${w}/${h}`;
+  `https://placeholdr.dev/${w}x${h}/${encodeURIComponent(seed)}?style=cartoon`;
 
 export const shows: Show[] = [
   {
@@ -31,7 +30,7 @@ export const shows: Show[] = [
     episodes: 24,
     rating: 4.9,
     color: "primary",
-    seed: "kidflix-luna",
+    seed: "cute moon cat backyard cartoon",
     learns: ["Sharing", "Naming feelings", "Simple counting"],
     description:
       "Luna the moon-cat lands in a very ordinary backyard and finds it is not ordinary at all. Each gentle episode ends with a calm-down song instead of a cliffhanger.",
@@ -47,7 +46,7 @@ export const shows: Show[] = [
     episodes: 32,
     rating: 4.8,
     color: "mint",
-    seed: "kidflix-woods",
+    seed: "forest nature talking compass cartoon",
     learns: ["Habitats", "Seasons", "Observation"],
     description:
       "Pip and a chatty brass compass map a forest one square metre at a time, counting beetles and befriending a very slow snail called Turbo.",
@@ -63,7 +62,7 @@ export const shows: Show[] = [
     episodes: 40,
     rating: 4.7,
     color: "sunny",
-    seed: "kidflix-tinker",
+    seed: "kids building workshop cartoon",
     learns: ["Cause & effect", "Measuring", "Persistence"],
     description:
       "A workshop of kid inventors turns cardboard into catapults, marble runs and one suspiciously wobbly robot named Clang.",
@@ -79,7 +78,7 @@ export const shows: Show[] = [
     episodes: 18,
     rating: 4.9,
     color: "grape",
-    seed: "kidflix-cloud",
+    seed: "clouds feelings cartoon",
     learns: ["Emotion words", "Breathing", "Empathy"],
     description:
       "Five clouds with five moods drift over a sleepy town. When one turns grey, the others learn to sit beside it instead of fixing it.",
@@ -95,7 +94,7 @@ export const shows: Show[] = [
     episodes: 28,
     rating: 4.6,
     color: "bubblegum",
-    seed: "kidflix-rocket",
+    seed: "kids playground rocket cartoon",
     learns: ["Forces", "Hypotheses", "Teamwork"],
     description:
       "Two rival recess crews settle every argument with an experiment, a stopwatch and one extremely patient caretaker.",
@@ -111,7 +110,7 @@ export const shows: Show[] = [
     episodes: 22,
     rating: 4.8,
     color: "sunny",
-    seed: "kidflix-noodle",
+    seed: "kids cooking kitchen cartoon",
     learns: ["Fractions", "Food cultures", "Kitchen safety"],
     description:
       "Chef Momo cooks one dish from one grandparent's recipe box per episode, with a no-knife rule and a lot of flour on the ceiling.",
@@ -127,7 +126,7 @@ export const shows: Show[] = [
     episodes: 36,
     rating: 4.7,
     color: "mint",
-    seed: "kidflix-dino",
+    seed: "toddler dinosaurs daycare cartoon",
     learns: ["Routines", "Turn taking", "Vocabulary"],
     description:
       "A very tired Triceratops runs a daycare for hatchlings who have not yet learned that stomping indoors is a choice.",
@@ -143,7 +142,7 @@ export const shows: Show[] = [
     episodes: 44,
     rating: 5,
     color: "primary",
-    seed: "kidflix-star",
+    seed: "bedtime stars stories cartoon",
     learns: ["Listening", "Imagination", "Wind-down"],
     description:
       "Hand-painted folk tales read at a whisper, with the screen slowly dimming to almost black by the final minute.",
@@ -159,7 +158,7 @@ export const shows: Show[] = [
     episodes: 20,
     rating: 4.6,
     color: "grape",
-    seed: "kidflix-code",
+    seed: "bugs coding garden cartoon",
     learns: ["Sequencing", "Loops", "Logic"],
     description:
       "A squad of beetles writes instructions for their garden robot. When the robot misbehaves, the crew reads the code line by line.",
@@ -175,7 +174,7 @@ export const shows: Show[] = [
     episodes: 26,
     rating: 4.8,
     color: "bubblegum",
-    seed: "kidflix-melody",
+    seed: "market music instruments cartoon",
     learns: ["Rhythm", "Instruments", "World music"],
     description:
       "Every Saturday the market fills with instruments from somewhere new, and the whole town accidentally forms an orchestra.",
@@ -191,7 +190,7 @@ export const shows: Show[] = [
     episodes: 18,
     rating: 4.7,
     color: "mint",
-    seed: "kidflix-ocean",
+    seed: "ocean reef animals cartoon",
     learns: ["Ecosystems", "Adaptation", "Conservation"],
     description:
       "A pufferfish documentary host introduces reef residents who are strange, useful and occasionally extremely rude.",
@@ -207,7 +206,7 @@ export const shows: Show[] = [
     episodes: 30,
     rating: 4.9,
     color: "sunny",
-    seed: "kidflix-paint",
+    seed: "kids painting art cartoon",
     learns: ["Colour mixing", "Shapes", "Fine motor"],
     description:
       "Follow-along painting with a narrator who celebrates smudges as an important artistic decision.",
@@ -275,7 +274,7 @@ export const kidProfiles = [
     age: 6,
     band: "6-8" as AgeBand,
     color: "sunny" as const,
-    avatarSeed: "kidflix-avatar-jamie",
+    avatarSeed: "kid avatar sunny",
     streak: 4,
     dailyLimit: 80,
     watchedToday: 48,
@@ -287,7 +286,7 @@ export const kidProfiles = [
     age: 4,
     band: "3-5" as AgeBand,
     color: "mint" as const,
-    avatarSeed: "kidflix-avatar-arun",
+    avatarSeed: "kid avatar mint",
     streak: 2,
     dailyLimit: 45,
     watchedToday: 20,
@@ -299,7 +298,7 @@ export const kidProfiles = [
     age: 10,
     band: "9-12" as AgeBand,
     color: "grape" as const,
-    avatarSeed: "kidflix-avatar-nila",
+    avatarSeed: "kid avatar grape",
     streak: 7,
     dailyLimit: 100,
     watchedToday: 65,

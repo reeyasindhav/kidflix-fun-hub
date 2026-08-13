@@ -89,7 +89,7 @@ function Home() {
               <Star className="size-7 fill-current" />
             </span>
             <img
-              src={img("kidflix-hero-cat", 900, 1100)}
+              src={img("cute cat cartoon", 900, 1100)}
               alt="A curious kitten peeking out from leaves"
               className="animate-float aspect-3/4 w-full rounded-[3rem] border-8 border-accent/70 object-cover shadow-float [animation-delay:-2s]"
             />

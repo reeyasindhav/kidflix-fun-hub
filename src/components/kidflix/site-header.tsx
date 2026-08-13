@@ -3,6 +3,7 @@ import { Bell, Heart, Home, Lock, Menu, Popcorn, Sparkles, X } from "lucide-reac
 import { useState } from "react";
 
 import { useAuth } from "@/lib/auth";
+import { SignOutConfirm } from "@/components/kidflix/sign-out-confirm";
 import { cn } from "@/lib/utils";
 
 const nav = [
@@ -76,12 +77,11 @@ export function SiteHeader() {
               >
                 {account.name.charAt(0).toUpperCase()}
               </Link>
-              <button
-                onClick={signOut}
-                className="hidden text-xs font-bold text-muted-foreground underline-offset-4 hover:underline lg:block"
-              >
-                Sign out
-              </button>
+              <SignOutConfirm onConfirm={signOut}>
+                <button className="hidden text-xs font-bold text-muted-foreground underline-offset-4 hover:underline lg:block">
+                  Sign out
+                </button>
+              </SignOutConfirm>
             </div>
           ) : (
             <Link

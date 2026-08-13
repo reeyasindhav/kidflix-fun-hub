@@ -1,8 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Award, Clock, Flame, Heart, Pencil, Plus, Settings } from "lucide-react";
+import { useState } from "react";
+import { Award, Clock, Flame, Heart, Pencil, Settings } from "lucide-react";
 
 import { AuthGate } from "@/components/kidflix/auth-gate";
-import { badges, getShow, img, kidProfiles, weekWatch } from "@/data/kidflix";
+import { AddKidDialog } from "@/components/kidflix/add-kid-dialog";
+import { SignOutConfirm } from "@/components/kidflix/sign-out-confirm";
+import { badges, getShow, img, kidProfiles, weekWatch, type AgeBand } from "@/data/kidflix";
 import { useAuth } from "@/lib/auth";
 import { cn } from "@/lib/utils";
 
@@ -36,7 +39,8 @@ const tone: Record<string, string> = {
 function ProfilePage() {
   const { account, setActiveKid, signOut } = useAuth();
   const activeId = account?.activeKid ?? "jamie";
-  const kid = kidProfiles.find((k) => k.id === activeId) ?? kidProfiles[0]!;
+  const [profiles, setProfiles] = useState(kidProfiles);
+  const kid = profiles.find((k) => k.id === activeId) ?? profiles[0]!;
   const fav = getShow(
     kid.favourite === "Tiny Tinkerers"
       ? "tiny-tinkerers"
@@ -45,6 +49,11 @@ function ProfilePage() {
         : "code-critters",
   )!;
   const weekTotal = weekWatch.reduce((a, b) => a + b.minutes, 0);
+
+  const handleAddKid = (newKid: (typeof kidProfiles)[number]) => {
+    setProfiles((prev) => [...prev, newKid]);
+    setActiveKid(newKid.id);
+  };
 
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6">
@@ -66,19 +75,18 @@ function ProfilePage() {
           >
             <Settings className="size-4" /> Parent zone
           </Link>
-          <button
-            onClick={signOut}
-            className="press rounded-full bg-secondary px-5 py-3.5 font-extrabold"
-          >
-            Sign out
-          </button>
+          <SignOutConfirm onConfirm={signOut}>
+            <button className="press rounded-full bg-secondary px-5 py-3.5 font-extrabold">
+              Sign out
+            </button>
+          </SignOutConfirm>
         </div>
       </section>
 
       <section className="mt-10">
         <h2 className="text-3xl">Who's watching?</h2>
         <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {kidProfiles.map((k, i) => (
+          {profiles.map((k, i) => (
             <button
               key={k.id}
               onClick={() => setActiveKid(k.id)}
@@ -107,13 +115,7 @@ function ProfilePage() {
               )}
             </button>
           ))}
-          <div className="animate-pop-in grid place-items-center rounded-4xl border-3 border-dashed border-border bg-transparent p-6 text-center">
-            <span className="grid size-14 place-items-center rounded-2xl bg-secondary">
-              <Plus className="size-6" />
-            </span>
-            <p className="mt-3 font-display text-lg">Add a kid</p>
-            <p className="text-xs font-bold text-muted-foreground">Up to 6 profiles</p>
-          </div>
+          <AddKidDialog onAdd={handleAddKid} />
         </div>
       </section>
 

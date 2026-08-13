@@ -1,42 +1,38 @@
-# Kidflix Fun Hub
+# Kidflix — Safe cartoon streaming for curious kids
 
-Please create a project for Kidflix, a children’s cartoon streaming website
+A child-first streaming home with curated cartoons, age-tier filtering, parental controls and honest watch-time tracking. Built with React, TanStack Router, Tailwind CSS, and Radix UI primitives.
 
-Create a full ui/ux design for this website. Make sure to have design-focused pages.
+## What this includes
 
-The final site should be production-ready and unique something that a normal designer would not be able to create. It should include a minimum of 8 to 10 pages, including login and signup pages and authenticated pages like a profile. The focus should be on design while maintaining mockup data. 
-Do not generate images; instead, you can use web search for real-world content and open-source images to use on the site
-Add animations to the site, and please give a simple user flow in the response.
+- Browse, show detail, watch, collections, and My List pages
+- Age-tier filtering and a kid-friendly search experience
+- Login and signup flows with a mock local auth session
+- Profile switching, watch-time streak, and badge collection views
+- Parent zone with controls, watch-time reports, approval requests and recent history
+- Add-kid dialog with local state management
+- Terms of service and privacy policy pages
+- Sign-out confirmation using an alert dialog
 
-A safe streaming platform for kids featuring cartoons, animated movies, and educational shows.
+## Tech stack
 
-Design idea: Bright, bubbly colour palette, large illustrated character cards, age-group filtering, parent-control dashboard, watch-time tracker.
+- React + TypeScript
+- TanStack Router + TanStack Query
+- Tailwind CSS v4
+- Radix UI primitives
+- Lucide icons
+- Recharts-ready project setup
 
-Problem Statement:
-
-Parents want a safe, engaging entertainment space for their children, but mainstream streaming platforms expose kids to age-inappropriate content, addictive auto-play loops, and screen-time fatigue. Existing platforms lack granular parental controls, intuitive age-tier filtering, and transparent watch-time metrics, forcing parents to monitor what their children watch constantly. 
-
-Kidflix addresses this challenge by providing a secure, child-first streaming ecosystem that pairs a bright, accessible interface with robust backend controls- giving kids a fun environment to explore curated cartoons while empowering parents with precise content filters and screen-time management tools.
-
-Ask if you have any questions.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/887f474b-efd2-43d5-975b-a69be42c7541).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Getting started
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+## Scripts
+
+- `npm run dev` — start the dev server
+- `npm run build` — production build
+- `npm run preview` — preview the production build
+- `npm run lint` — lint the codebase
+- `npm run format` — format with Prettier
